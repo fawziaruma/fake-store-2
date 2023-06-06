@@ -1,8 +1,11 @@
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Allproduct from './Component/Allproduct/Allproduct'
 import Menubar from './Component/Menubar/Menubar'
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 function App() {
 
@@ -12,7 +15,10 @@ function App() {
     setCount(count +1 )
   }
 
-  console.log(count);
+ useEffect( () =>{
+     AOS.init();
+     AOS.refresh()
+ } , [] )
  
   return (
     <>
